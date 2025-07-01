@@ -58,7 +58,7 @@ class LogViewer:
         self.search_var = tk.StringVar()
         self.search_entry = tk.Entry(search_frame, textvariable=self.search_var, width=30)
         self.search_entry.pack(side=tk.LEFT, padx=5)
-        self.search_var.trace('w', self.on_search_changed)
+        self.search_entry.bind('<KeyRelease>', self.on_search_changed)
         
         # Clear search button
         clear_search_btn = tk.Button(search_frame, text="Clear Search", command=self.clear_search)
@@ -207,7 +207,7 @@ class LogViewer:
         stats_text = f"Transcriptions: {len(transcriptions)} | Words: {total_words} | Duration: {duration:.1f} min | WPM: {words_per_minute:.1f}"
         self.stats_label.config(text=stats_text)
     
-    def on_search_changed(self, *args):
+    def on_search_changed(self, event=None):
         """Handle search text changes"""
         search_term = self.search_var.get().lower()
         if not search_term:
