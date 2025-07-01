@@ -11,7 +11,8 @@ echo "2. Improved Version (transcriber_improved.py)"
 echo "3. Fast Version (transcriber_fast.py)"
 echo "4. Real-time Version (transcriber_realtime.py)"
 echo "5. Log Viewer (log_viewer.py)"
-echo "6. Exit"
+echo "6. Test Installation (test_installation.py)"
+echo "7. Exit"
 echo ""
 
 # Check if virtual environment exists and activate it
@@ -46,20 +47,24 @@ run_version() {
             python log_viewer.py
             ;;
         6)
+            echo "Running Installation Test..."
+            python test_installation.py
+            ;;
+        7)
             echo "Exiting..."
             exit 0
             ;;
         *)
-            echo "Invalid option. Please choose 1-6."
+            echo "Invalid option. Please choose 1-7."
             ;;
     esac
 }
 
 # Main loop
 while true; do
-    read -p "Enter your choice (1-6): " choice
+    read -p "Enter your choice (1-7): " choice
     
-    if [[ $choice =~ ^[1-6]$ ]]; then
+    if [[ $choice =~ ^[1-7]$ ]]; then
         run_version $choice
         echo ""
         read -p "Press Enter to continue or Ctrl+C to exit..."
@@ -72,9 +77,10 @@ while true; do
         echo "3. Fast Version (transcriber_fast.py)"
         echo "4. Real-time Version (transcriber_realtime.py)"
         echo "5. Log Viewer (log_viewer.py)"
-        echo "6. Exit"
+        echo "6. Test Installation (test_installation.py)"
+        echo "7. Exit"
         echo ""
     else
-        echo "Invalid input. Please enter a number between 1 and 6."
+        echo "Invalid input. Please enter a number between 1 and 7."
     fi
 done 
