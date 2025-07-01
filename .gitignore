@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code / IntelliJ config
+.vscode/
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Python environment files
+*.env
+.env.*
+
+# Database files (if local SQLite used)
+*.sqlite3
+*.db
+
+# Docker volumes, caches
+*.pid
+*.tar
+*.bak
+
+# pycache in subfolders
+**/__pycache__/
+
+# init scripts if generated as backups
+init/*.sql~
+
+# pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+coverage.xml
+.cache
+
+# MyPy type checker cache
+.mypy_cache/
+
+# Bandit security checker
+bandit.json
+
+# Python egg and build artifacts
+*.egg-info/
+dist/
+build/
+.eggs/
